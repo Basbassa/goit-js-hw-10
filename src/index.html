@@ -5,11 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 10</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="fetchCountries.js" type="module"></script>
   </head>
   <body>
-    <input type="text" id="search-box" />
-    <ul class="country-list"></ul>
-    <div class="country-info"></div>
+    <header>
+      <input
+        type="text"
+        id="search-box"
+        placeholder="Search for a country..."
+      />
+      <div class="filter">
+        <label for="region-select">Filter by Region:</label>
+        <select id="region-select">
+          <option value="">All</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
+    </header>
+    <main>
+      <ul class="country-list"></ul>
+      <div class="country-info"></div>
+    </main>
 
     <script src="index.js" type="module"></script>
   </body>
