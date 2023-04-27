@@ -1,29 +1,22 @@
-function fetchCountries(name, region) {
-  let url = `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags.svg,languages`;
-
-  if (region) {
-    url += `&region=${region}`;
-  }
-
-  return fetch(url)
+export function fetchCountries(searchTerm) {
+  const endpoint = `https://restcountries.com/v3.1/name/${searchTerm}`;
+  return fetch(endpoint)
     .then(response => {
       if (!response.ok) {
-        throw new Error('Could not fetch countries');
+        throw new Error('Unable to fetch countries.');
       }
       return response.json();
     })
     .then(data => {
-      const countries = data.map(country => ({
-        name: country.name.common,
-        capital: country.capital?.[0],
-        population: country.population,
-        flag: country.flags.svg,
-        languages: Object.values(country.languages).map(lang => lang.name),
-      }));
+      const countries = data.map(country => {
+        return {
+          name: country.name,
+          population: country.population,
+          capital: country.capital,
+          languages: Object.values(country.languages),
+          flags: country.flags,
+        };
+      });
       return countries;
-    })
-    .catch(error => {
-      console.error('Error fetching countries:', error);
-      throw error;
     });
 }
