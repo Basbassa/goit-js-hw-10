@@ -1,6 +1,10 @@
-export function fetchCountries(name) {
-  const fields = 'name.official;flag;population;region;capital';
-  const url = `https://restcountries.com/v3.1/name/${name}?fields=${fields}`;
+function fetchCountries(name, region) {
+  let url = `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags.svg,languages`;
+
+  if (region) {
+    url += `&region=${region}`;
+  }
+
   return fetch(url)
     .then(response => {
       if (!response.ok) {
@@ -10,11 +14,11 @@ export function fetchCountries(name) {
     })
     .then(data => {
       const countries = data.map(country => ({
-        name: country.name.official,
-        capital: country.capital[0],
+        name: country.name.common,
+        capital: country.capital?.[0],
         population: country.population,
         flag: country.flags.svg,
-        region: country.region,
+        languages: Object.values(country.languages).map(lang => lang.name),
       }));
       return countries;
     })
