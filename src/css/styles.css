@@ -43,3 +43,25 @@ body {
 .country__Flag {
   margin-right: 5px;
 }
+
+#search-box {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  font-size: 24px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1),
+    inset 0 4px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#search-box:focus {
+  outline: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 4px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -4px 4px rgba(255, 255, 255, 0.1);
+}
