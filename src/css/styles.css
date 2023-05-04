@@ -47,12 +47,13 @@ body {
 #search-box {
   display: block;
   margin: 0 auto;
+  margin-top: 5%;
   width: 80%;
   height: 50px;
   padding: 10px;
-  font-size: 24px;
+  font-size: 16px;
   border: none;
-  border-radius: 25px;
+  border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1),
     inset 0 4px 4px rgba(255, 255, 255, 0.2),
     inset 0 -4px 4px rgba(255, 255, 255, 0.2);
@@ -64,4 +65,9 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
     inset 0 4px 4px rgba(255, 255, 255, 0.1),
     inset 0 -4px 4px rgba(255, 255, 255, 0.1);
+}
+
+#search-box::placeholder {
+  opacity: 0.5;
+  color: #9ba4b5;
 }
