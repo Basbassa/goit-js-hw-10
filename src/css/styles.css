@@ -24,13 +24,14 @@ body {
 }
 
 .country-list li {
-  padding: 10px;
+  padding: 1rem;
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 .country-list li:hover {
-  background-color: #f1f1f1;
+  background-color: #aebdca;
 }
 
 /* styl dla szczegółów kraju */

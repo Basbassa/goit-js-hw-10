@@ -5,11 +5,11 @@ import { Notify } from 'notiflix';
 
 const DEBOUNCE_DELAY = 300;
 
-const countrySearch = document.getElementById('search-box');
+const searchBox = document.getElementById('search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-countrySearch.addEventListener(
+searchBox.addEventListener(
   'input',
   debounce(async ev => {
     // Usunięcie listy i szczegółów kraju
